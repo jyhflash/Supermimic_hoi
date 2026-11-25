@@ -7,3 +7,4 @@ deploy_artifacts/**/*.tar.gz filter=lfs diff=lfs merge=lfs -text
 deploy_artifacts/**/*.onnx filter=lfs diff=lfs merge=lfs -text
 deploy_artifacts/**/*.mjb filter=lfs diff=lfs merge=lfs -text
 deploy_artifacts/**/*.usd filter=lfs diff=lfs merge=lfs -text
+environment_backups/venv-contact-deploy.tar.gz filter=lfs diff=lfs merge=lfs -text

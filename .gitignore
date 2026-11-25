@@ -35,3 +35,6 @@ videos*/
 !deploy_artifacts/**/*.pt
 !deploy_artifacts/**/*.onnx
 !deploy_artifacts/**/*.mp4
+
+# Local environment archives; explicitly add only the chosen snapshot.
+/environment_backups/
