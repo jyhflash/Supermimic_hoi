@@ -1,0 +1,9 @@
+deploy_artifacts/**/*.STL filter=lfs diff=lfs merge=lfs -text
+deploy_artifacts/**/*.obj filter=lfs diff=lfs merge=lfs -text
+deploy_artifacts/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
+deploy_artifacts/**/*.pt filter=lfs diff=lfs merge=lfs -text
+deploy_artifacts/**/*.npz filter=lfs diff=lfs merge=lfs -text
+deploy_artifacts/**/*.tar.gz filter=lfs diff=lfs merge=lfs -text
+deploy_artifacts/**/*.onnx filter=lfs diff=lfs merge=lfs -text
+deploy_artifacts/**/*.mjb filter=lfs diff=lfs merge=lfs -text
+deploy_artifacts/**/*.usd filter=lfs diff=lfs merge=lfs -text

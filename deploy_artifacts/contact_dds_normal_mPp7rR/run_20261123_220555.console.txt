@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/yihong/SuperMimic-Repro-Sim2Real-main/scripts/deploy/g1_runner.py", line 1621, in main
+    r.startup()
+  File "/home/yihong/SuperMimic-Repro-Sim2Real-main/scripts/deploy/g1_runner.py", line 688, in startup
+    self.crc = CRC()
+  File "/home/yihong/GR00T-WholeBodyControl-main/external_dependencies/unitree_sdk2_python/unitree_sdk2py/utils/crc.py", line 32, in __init__
+    self.crc_lib = ctypes.CDLL(script_dir + '/lib/crc_amd64.so')
+  File "/usr/lib/python3.10/ctypes/__init__.py", line 374, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: /home/yihong/GR00T-WholeBodyControl-main/external_dependencies/unitree_sdk2_python/unitree_sdk2py/utils/lib/crc_amd64.so: invalid ELF header

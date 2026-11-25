@@ -1,0 +1,77 @@
+{
+  "config": {
+    "checkpoint": "/home/yihong/SuperMimic-Repro-Sim2Real-main/deploy_artifacts/hoi_contact_pose_sub7_largebox_016/source_checkpoint.pt",
+    "object": "largebox",
+    "split": "val",
+    "device": "cuda:0",
+    "output": "/home/yihong/SuperMimic-Repro-Sim2Real-main/deploy_artifacts/hoi_contact_pose_sub7_largebox_016/training_env_validation.json",
+    "clip_start": 10,
+    "episodes": 1,
+    "max_steps": 0,
+    "min_object_contact_coverage": 0.9,
+    "max_mean_root_error": 0.2,
+    "max_mean_object_position_error": 0.15,
+    "max_mean_object_orientation_error_deg": 30.0
+  },
+  "links": [
+    "left_wrist_yaw_link",
+    "right_wrist_yaw_link",
+    "left_ankle_roll_link",
+    "right_ankle_roll_link",
+    "pelvis"
+  ],
+  "scene_types": [
+    "terrain",
+    "object"
+  ],
+  "criteria": "full motion completion without failure; mean robot root error below threshold; desired object-contact coverage above threshold (when annotated); mean object position/orientation errors below thresholds when their training rewards were enabled",
+  "object_position_required": true,
+  "object_orientation_required": true,
+  "note": "All errors/coverage are measured on the executed prefix; capped/failed clips cannot succeed. Legacy contact-only checkpoints keep their original success criteria and also report pose errors.",
+  "success_rate": 0.0,
+  "episodes": [
+    {
+      "clip_index": 10,
+      "clip_id": "omomo/unitree_g1/sub7_largebox_016",
+      "steps": 321,
+      "reference_steps": 321,
+      "completed": true,
+      "completion_fraction": 1.0,
+      "success": false,
+      "stop_reasons": [
+        "motion_end"
+      ],
+      "mean_root_position_error_m": 0.05280082145284403,
+      "mean_joint_rmse_rad": 0.2464016810744258,
+      "mean_object_position_error_m": 0.037934922831890254,
+      "mean_object_orientation_error_deg": 53.33574410149613,
+      "object_contact_coverage": 0.9629629629629629,
+      "terrain_contact_coverage": 0.9843505477308294,
+      "contact_probability_mae": 0.0343997583561722,
+      "desired_contact_steps_per_pair": [
+        0.0,
+        215.0,
+        0.0,
+        217.0,
+        318.0,
+        0.0,
+        321.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "achieved_contact_steps_per_pair": [
+        0.0,
+        207.0,
+        0.0,
+        209.0,
+        314.0,
+        0.0,
+        315.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ]
+}

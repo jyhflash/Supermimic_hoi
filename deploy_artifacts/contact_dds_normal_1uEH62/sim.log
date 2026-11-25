@@ -1,0 +1,2 @@
+1795489634.543121 [1]     python: selected interface "lo" is not multicast-capable: disabling multicast
+DDS simulator domain=1 interface=lo; no real-robot interface is used

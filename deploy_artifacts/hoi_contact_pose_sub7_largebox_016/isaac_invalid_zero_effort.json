@@ -1,0 +1,185 @@
+{
+  "engine": "Isaac Lab / PhysX",
+  "device": "cpu",
+  "checkpoint_sha256": "e4485f61c273dc694ae656ace3c56f7ea18b123ac3164a80005105eec8e1d167",
+  "checkpoint_step": 112000,
+  "clip": "omomo/unitree_g1/sub7_largebox_016",
+  "executed_steps": 14,
+  "expected_steps": 320,
+  "stop_reason": "robot_failure",
+  "dynamic_object": true,
+  "object_in_policy": false,
+  "robot_mass": 33.34114074707031,
+  "physics_dt": 0.005,
+  "control_dt": 0.02,
+  "limitations": [
+    "Self collisions disabled; MuJoCo collision-pair exclusions are not reproduced",
+    "Capsules imported as cylinder plus sphere compound",
+    "PhysX convex cooking and solver/contact laws differ",
+    "No contact-coverage success gate or hardware transition test",
+    "Uses simulator root odometry"
+  ],
+  "mean_errors": {
+    "root_position_error_m": 0.09940833463666163,
+    "object_position_error_m": 0.003650189743244222,
+    "object_orientation_error_deg": 0.8079481918931156,
+    "joint_rmse_rad": 0.17057751757758005
+  },
+  "trajectory": [
+    {
+      "frame": 1,
+      "root_position_error_m": 0.0020146083552390337,
+      "object_position_error_m": 0.0037523419596254826,
+      "object_orientation_error_deg": 0.6624279413370914,
+      "joint_rmse_rad": 0.010164597071707249,
+      "object_displacement_m": 0.003758341772481799,
+      "root_height_error_m": 0.001972973346710205,
+      "root_tilt_error": 0.000850287528073812,
+      "max_abs_action": 3.828134298324585
+    },
+    {
+      "frame": 2,
+      "root_position_error_m": 0.0068703810684382915,
+      "object_position_error_m": 0.004097168333828449,
+      "object_orientation_error_deg": 1.0147108100222948,
+      "joint_rmse_rad": 0.012510373257100582,
+      "object_displacement_m": 0.004111104644834995,
+      "root_height_error_m": 0.00674128532409668,
+      "root_tilt_error": 0.00286234089971793,
+      "max_abs_action": 3.800422191619873
+    },
+    {
+      "frame": 3,
+      "root_position_error_m": 0.014196614734828472,
+      "object_position_error_m": 0.004012737423181534,
+      "object_orientation_error_deg": 0.9784522417666257,
+      "joint_rmse_rad": 0.021909277886152267,
+      "object_displacement_m": 0.004031509160995483,
+      "root_height_error_m": 0.013924181461334229,
+      "root_tilt_error": 0.0059793801387568735,
+      "max_abs_action": 3.78391432762146
+    },
+    {
+      "frame": 4,
+      "root_position_error_m": 0.022392798215150833,
+      "object_position_error_m": 0.0035807774402201176,
+      "object_orientation_error_deg": 0.7845138763210308,
+      "joint_rmse_rad": 0.03712550178170204,
+      "object_displacement_m": 0.003602629527449608,
+      "root_height_error_m": 0.022017359733581543,
+      "root_tilt_error": 0.012038131792511564,
+      "max_abs_action": 3.6886801719665527
+    },
+    {
+      "frame": 5,
+      "root_position_error_m": 0.03271883353590965,
+      "object_position_error_m": 0.003577978815883398,
+      "object_orientation_error_deg": 0.7868055753085634,
+      "joint_rmse_rad": 0.060946881771087646,
+      "object_displacement_m": 0.0036031478084623814,
+      "root_height_error_m": 0.03218340873718262,
+      "root_tilt_error": 0.02038982035607595,
+      "max_abs_action": 4.053523540496826
+    },
+    {
+      "frame": 6,
+      "root_position_error_m": 0.04540582001209259,
+      "object_position_error_m": 0.0035757245495915413,
+      "object_orientation_error_deg": 0.7827072229636566,
+      "joint_rmse_rad": 0.09009069204330444,
+      "object_displacement_m": 0.003603151300922036,
+      "root_height_error_m": 0.044717609882354736,
+      "root_tilt_error": 0.02795612514207868,
+      "max_abs_action": 4.088362216949463
+    },
+    {
+      "frame": 7,
+      "root_position_error_m": 0.06149318069219589,
+      "object_position_error_m": 0.003573683323338628,
+      "object_orientation_error_deg": 0.7818576347586529,
+      "joint_rmse_rad": 0.12377379089593887,
+      "object_displacement_m": 0.0036031471099704504,
+      "root_height_error_m": 0.06067448854446411,
+      "root_tilt_error": 0.03546017324272599,
+      "max_abs_action": 4.192922592163086
+    },
+    {
+      "frame": 8,
+      "root_position_error_m": 0.0809965655207634,
+      "object_position_error_m": 0.003571937559172511,
+      "object_orientation_error_deg": 0.787342912050775,
+      "joint_rmse_rad": 0.1605549156665802,
+      "object_displacement_m": 0.0036031201016157866,
+      "root_height_error_m": 0.08009809255599976,
+      "root_tilt_error": 0.04135326573952558,
+      "max_abs_action": 4.293362140655518
+    },
+    {
+      "frame": 9,
+      "root_position_error_m": 0.10444933921098709,
+      "object_position_error_m": 0.003568601794540882,
+      "object_orientation_error_deg": 0.7901285689412225,
+      "joint_rmse_rad": 0.1999446004629135,
+      "object_displacement_m": 0.003603112418204546,
+      "root_height_error_m": 0.10351347923278809,
+      "root_tilt_error": 0.04504190873311409,
+      "max_abs_action": 4.50436544418335
+    },
+    {
+      "frame": 10,
+      "root_position_error_m": 0.13208211958408356,
+      "object_position_error_m": 0.0035644809249788523,
+      "object_orientation_error_deg": 0.7915087651112614,
+      "joint_rmse_rad": 0.24192455410957336,
+      "object_displacement_m": 0.0036031557247042656,
+      "root_height_error_m": 0.13115626573562622,
+      "root_tilt_error": 0.046716650993477105,
+      "max_abs_action": 4.800671100616455
+    },
+    {
+      "frame": 11,
+      "root_position_error_m": 0.16384612023830414,
+      "object_position_error_m": 0.0035591437481343746,
+      "object_orientation_error_deg": 0.7892905043486506,
+      "joint_rmse_rad": 0.28567084670066833,
+      "object_displacement_m": 0.003603140125051141,
+      "root_height_error_m": 0.16294759511947632,
+      "root_tilt_error": 0.04463694895897785,
+      "max_abs_action": 5.198866367340088
+    },
+    {
+      "frame": 12,
+      "root_position_error_m": 0.19995734095573425,
+      "object_position_error_m": 0.0035557951778173447,
+      "object_orientation_error_deg": 0.7874808348549056,
+      "joint_rmse_rad": 0.3317464292049408,
+      "object_displacement_m": 0.003603128017857671,
+      "root_height_error_m": 0.19912105798721313,
+      "root_tilt_error": 0.03981818710728635,
+      "max_abs_action": 5.662948131561279
+    },
+    {
+      "frame": 13,
+      "root_position_error_m": 0.2403535544872284,
+      "object_position_error_m": 0.0035564028657972813,
+      "object_orientation_error_deg": 0.7864772182956922,
+      "joint_rmse_rad": 0.3799116611480713,
+      "object_displacement_m": 0.003603143384680152,
+      "root_height_error_m": 0.23960071802139282,
+      "root_tilt_error": 0.03132768725410662,
+      "max_abs_action": 6.108564376831055
+    },
+    {
+      "frame": 14,
+      "root_position_error_m": 0.28493940830230713,
+      "object_position_error_m": 0.003555882489308715,
+      "object_orientation_error_deg": 0.7875705804231956,
+      "joint_rmse_rad": 0.43181112408638,
+      "object_displacement_m": 0.0036031417548656464,
+      "root_height_error_m": 0.2842654585838318,
+      "root_tilt_error": 0.019844876124401334,
+      "max_abs_action": 6.353532314300537
+    }
+  ],
+  "invalid_reason": "Development run used joint-level zero force ranges instead of actuator force limits; not a policy evaluation."
+}

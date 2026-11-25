@@ -1,0 +1,16 @@
+{
+  "schema": "contact-hardware-review-v1",
+  "hashes": {
+    "policy.onnx": "24a52e399366b21b45891ea5aead43e209533b4142313875c45e80b755115f5c",
+    "reference.npz": "e492501119ee962589daadee69ecc4353e909ef300aa841daf6cf9449238abd3",
+    "deploy_config.json": "ff831370e2d751e4b1d8da0fc0907294efb4bff81d7a54dcd239cd79cc10bd55",
+    "hardware_config.json": "c98cd912411a67fea1ea2dd016d3cea4126b4beff91f9d9a59b6d4c920169390"
+  },
+  "robot_variant": "UNCONFIRMED",
+  "reviewer": "",
+  "vio_frame_calibrated": false,
+  "shared_core_sim_pass": false,
+  "dds_fault_tests_pass": false,
+  "transitions_and_standby_pass": false,
+  "hoi_task_success": false
+}

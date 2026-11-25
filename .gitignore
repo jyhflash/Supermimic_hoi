@@ -15,8 +15,7 @@ wandb/
 .ruff_cache/
 experiments/**/outputs/
 
-# Deploy bundles, robot logs, videos (published as release assets, not tracked)
-deploy_artifacts/
+# Robot logs and videos outside versioned deployment bundles
 deploy_logs/
 videos*/
 *.mp4
@@ -30,3 +29,9 @@ videos*/
 !.env.example
 *.pem
 *.key
+
+# Version deployment bundles, including binary assets (stored with Git LFS).
+!deploy_artifacts/**/*.npz
+!deploy_artifacts/**/*.pt
+!deploy_artifacts/**/*.onnx
+!deploy_artifacts/**/*.mp4

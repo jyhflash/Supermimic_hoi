@@ -174,3 +174,16 @@ v1.1 包里的 `policy.onnx` 已经是 ONNX IR 9，可以直接在 PC2 上用；
 - [LAFAN1](https://huggingface.co/datasets/lvhaidong/LAFAN1_Retargeting_Dataset) / [BONES-SEED](https://huggingface.co/datasets/bones-studio/seed)：动作数据集
 
 "Unitree" 和 "G1" 是 Unitree Robotics 的商标。
+
+## 下载完整部署包（Git LFS）
+
+`deploy_artifacts/` 已纳入版本管理，权重、ONNX、仿真模型和网格等二进制文件通过 Git LFS 保存。请先安装 Git LFS，然后执行：
+
+```bash
+git lfs install
+git clone https://github.com/jyhflash/Supermimic_hoi.git
+cd Supermimic_hoi
+git lfs pull
+```
+
+已有仓库更新时执行 `git pull` 和 `git lfs pull`。仅下载 GitHub 源码 ZIP 可能无法获得完整 LFS 文件。虚拟环境、缓存和部署目录以外的本地训练数据/日志仍不纳入版本管理。

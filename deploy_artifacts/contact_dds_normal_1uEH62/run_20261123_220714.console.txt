@@ -1,0 +1,53 @@
+[startup] lowstate rate 197 Hz, mode_machine=5 mode_pr=0 tick=1002 CRC bad=0
+[startup] no other rt/lowcmd publisher seen in 1.0 s
+================================================================================
+artifacts : /home/yihong/SuperMimic-Repro-Sim2Real-main/deploy_artifacts/hoi_contact_pose_sub7_largebox_016
+clips     : ['reference (321 fr, 6.4 s)']
+start pose: clip frame 0 clipped to soft limits ([1] joints clipped per clip)
+ref speed : reference: max reference joint speed over frames 1-25 2.98 rad/s (left_shoulder_pitch_joint, frame 15); frame 0 0.21 rad/s (info only)
+iface/dom : lo / 1  SIM  auto-sequence=True
+control   : policy 50 Hz, lowcmd 500 Hz, mode_pr=0 (PR), mode_machine latched 5, ORT threads 1
+STAGE     : GROUND  -> max_vel_frac 0.8, max_abs_action 50.0, torque_clamp_factor 1.5 x effort, clamp_soft_limits False, core tilt err 20 deg, hold tilt 46 deg
+stand kp  : [100.0, 100.0, 100.0, 150.0, 40.0, 40.0, 100.0, 100.0, 100.0, 150.0, 40.0, 40.0, 200.0, 200.0, 200.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0, 40.0]
+stand kd  : [2.0, 2.0, 2.0, 4.0, 2.0, 2.0, 2.0, 2.0, 2.0, 4.0, 2.0, 2.0, 5.0, 5.0, 5.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0]
+clip end  : STANDBY_POST (policy keeps standing in the last-frame pose); L2+up TWICE within 3.0 s -> 1.0 s blend to stand gains -> INTERP to the next clip (hoist must carry)
+safety    : stale>20.0 ms, overrun>2.0 cycles, main-loop heartbeat>50 ms, temp>80.0 C DAMP / >70.0 C no start (UNVERIFIED thresholds), motor-error mask 0xffffffff
+R1+A req  : HOLD>=1.0 s, max|q-f0|<0.1 rad, max|dq|<0.5 rad/s, tilt vs clip<10.0 deg, temp<70.0 C  -> STANDBY_PRE (policy stands still)
+R1+X req  : STANDBY_PRE>=3.0 s; over the last 3.0 s tilt err<8.0 deg, max|dq|<1.0 rad/s; temp<70.0 C  -> POLICY (motion)
+standby   : status every 3.0 s; WARN |yaw change|>15.0 deg, leg |dq|>1.0 rad/s for >0.5 s, temp>70.0 C, standby>120 s (documented cap)
+cpu       : governor schedutil (needs sudo to change); command thread affinity 'auto', rt-prio 50
+robot now : proj_grav=[ 0.469 -0.029 -0.883]  max|q - f0|=0.052 rad  max temp=30 C
+buttons   : L2+up = interpolate to f0 (PASSIVE; END_HOLD -> next clip); in STANDBY_PRE (-> HOLD, same clip) and
+            STANDBY_POST (-> next clip) it must be pressed TWICE within 3.0 s (stand gains: hoist must carry) |
+            R1+A = policy STANDBY (from HOLD) | R1+X = start the MOTION (from STANDBY_PRE) | L2+B = DAMP (any state)
+            (buttons pressed before the command thread starts are ignored; release and press again)
+================================================================================
+[   3.395] RT: command thread: {'cmd_cpu': 254, 'cmd_sched_err': "PermissionError(1, 'Operation not permitted')"}
+[   3.396] STATE: start in PASSIVE (stage ground)
+[   3.397] SIM: elastic band ON (/home/yihong/SuperMimic-Repro-Sim2Real-main/deploy_artifacts/contact_dds_normal_1uEH62/band)
+[   4.397] STATE: PASSIVE -> INTERP (to f0 of reference)
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+[   4.419] DAMP: INTERP -> DAMP: tilt 136 deg in INTERP > 46 deg
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+[   5.397] INFO: rt/lowcmd self-delivery ratio 1.00 -> 1 (foreign-publisher watch armed)
+[   5.437] SIM: exit 1.0 s after DAMP (--sim-exit-after-damp)
+[   5.437] SHUTDOWN: sending damping for 1 s
+[   6.440] SHUTDOWN: command thread stopped (alive=False); no more rt/lowcmd. damping 1.001 s, join 0.002 s
+[log] /home/yihong/SuperMimic-Repro-Sim2Real-main/deploy_artifacts/contact_dds_normal_1uEH62/run_20261123_220714.npz  (102 policy-loop records, 1523 lowcmd records)
+[summary] events:
+       3.395  RT       command thread: {'cmd_cpu': 254, 'cmd_sched_err': "PermissionError(1, 'Operation not permitted')"}
+       3.396  STATE    start in PASSIVE (stage ground)
+       3.397  SIM      elastic band ON (/home/yihong/SuperMimic-Repro-Sim2Real-main/deploy_artifacts/contact_dds_normal_1uEH62/band)
+       4.397  STATE    PASSIVE -> INTERP (to f0 of reference)
+       4.419  DAMP     INTERP -> DAMP: tilt 136 deg in INTERP > 46 deg
+       5.397  INFO     rt/lowcmd self-delivery ratio 1.00 -> 1 (foreign-publisher watch armed)
+       5.437  SIM      exit 1.0 s after DAMP (--sim-exit-after-damp)
+       5.437  SHUTDOWN sending damping for 1 s
+       6.440  SHUTDOWN command thread stopped (alive=False); no more rt/lowcmd. damping 1.001 s, join 0.002 s
+[summary] policy-loop period ms: mean 20.000  p1 18.589  p99 21.024  max 21.145  |jitter| p99 1.411
+[summary] wake-up lateness ms: p50 0.088  p99 1.497  max 1.687;  compute ms (STANDBY_*/POLICY): p50/p99/max n/a
+[summary] state age at loop ms: p50 1.67  p99 4.77  max 4.85
+[summary] lowcmd: 1523 msgs in 3.04 s = 500.4 Hz (includes immediate sends after policy steps); gap p99 3.180 max 6.340 ms; write failures 0
+[summary] stage ground profile {'max_vel_frac': 0.8, 'max_abs_action': 50.0, 'torque_clamp_factor': 1.5, 'max_tilt_hold': 0.8}; rt {'cmd_cpu': 254, 'cmd_sched_err': "PermissionError(1, 'Operation not permitted')"}; lowcmd self-delivery 1.0; DDS callback errors 0; stdout failures 0
+[summary] damp reason: tilt 136 deg in INTERP > 46 deg
